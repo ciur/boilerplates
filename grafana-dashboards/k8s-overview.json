@@ -278,7 +278,7 @@
             "uid": "${DS_PROMETHEUS}"
           },
           "editorMode": "code",
-          "expr": "avg by (instance)(node_memory_MemFree_bytes/node_memory_MemTotal_bytes*100)",
+          "expr": "avg by (instance)( (1 -  node_memory_MemAvailable_bytes / node_memory_MemTotal_bytes)  * 100  )",
           "instant": false,
           "legendFormat": "__auto",
           "range": true,
@@ -305,6 +305,6 @@
   "timezone": "browser",
   "title": "K8s Overview",
   "uid": "adlctdtynt5hca",
-  "version": 13,
+  "version": 15,
   "weekStart": ""
 }
